@@ -5,4 +5,4 @@ You can use this development for calculating simple and some trick operations.
 
 ## Result
 
-![Result gif]()
+![Result gif](https://github.com/Hamroliyev/CalculatR/blob/main/Assets/result.gif)
