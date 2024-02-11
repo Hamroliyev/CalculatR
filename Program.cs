@@ -1,12 +1,18 @@
 ﻿Console.WriteLine("Welcome to Simple calculator");
-Console.WriteLine("1 - Simple operation");
-Console.WriteLine("2 - Tricky operation");
-Console.Write("Choose : ");
-string inputChoice = Console.ReadLine();
-
-switch (inputChoice)
+bool isContinued = true;
+while (isContinued)
 {
-    case "1":
+    Console.WriteLine("1 - Simple operation");
+    Console.WriteLine("2 - Tricky operation");
+    Console.WriteLine("3 - To see prime numbers till the given number");
+    Console.WriteLine("4 - To see three prime numbers after the given numbers in the sequence");
+    Console.WriteLine("5 - To see fibonacci numbers till the given number");
+    Console.WriteLine("Write anything else to exit");
+    Console.Write("Choose : ");
+    string inputChoice = Console.ReadLine();
+    switch (inputChoice)
+    {
+        case "1":
         Console.Write("Write operation : ");
         string inputOperation = Console.ReadLine();
         int firstNumber;
@@ -56,8 +62,34 @@ switch (inputChoice)
         Console.WriteLine($"tan(alfa) = {Math.Atan(angle)}");
         Console.WriteLine($"ctan(alfa) = {1/Math.Atan(angle)}");
     break;
-    default:
-        Console.WriteLine("Bye....");
-    break;
+        case  "3":
+            Console.Write("Enter the number : ");
+            bool isPrime = false;
+            string inputNumber = Console.ReadLine();
+            int number = Convert.ToInt32(inputNumber);
+            Console.Write("Prime numbers : 2");
+            for(int i=2; i<=number; i++){
+                for(int j=2; j<=Math.Sqrt(i); j++)
+                {
+                    if(i%j==0){
+                        isPrime=false;
+                        break;
+                    }
+                }
+
+                if(isPrime)
+                {
+                    Console.Write(" "+i);
+                }
+            
+                isPrime=true;
+            }
+            Console.WriteLine();
+        break;
+        default:
+            Console.WriteLine("Bye....");
+            isContinued = false;
+        break;
+    }
 }
 
